@@ -6,51 +6,53 @@ using namespace std;
 
 class Box
 {
-    float width;
-    float height;
-    float depth;
+private:
+	float width;
+	float height;
+	float depth;
 public:
-    Box(float w, float h, float d)
-    {
-        width = w;
-        height = h;
-        depth = d;
-    }
+	Box(float w, float h, float d)
+	{
+		width = w;
+		height = h;
+		depth = d;
+	}
 
-    float GetSurface()
-    {
-        float Surface;
-        Surface = 2 * ((width * height) + (width * depth) + (depth * height));
-        return Surface;
-    }
+	float GetSurface()
+	{
+		float Surface;
+		Surface = 2 * ((width * height) + (width * depth) + (depth * height));
+		return Surface;
+	}
 
-    float GetVolume()
-    {
-        float Volume = 0;
-        Volume = width * height * depth;
-        return Volume;
-    }
+	float GetVolume()
+	{
+		float Volume = 0;
+		Volume = width * height * depth;
+		return Volume;
+	}
 };
 float InputNum(string massage)
 {
-    float i;
-    cout << massage;
-    cin >> i;
-    if (i < 0)
-    {
-        i *= -1;
-    }
-    return i;
+	float i;
+	cout << massage;
+	cin >> i;
+	if (i < 0)
+	{
+		i *= -1;
+	}
+	return i;
 }
 
 int main()
 {
-    Box* box = new Box(
-        InputNum("幅 = "),
-        InputNum("高さ = "),
-        InputNum("奥行き = ")
-    );
-    cout << "表面積 = " << box->GetSurface() << "体積 = " << box->GetVolume() << endl;
+	Box* box = new Box(
+		InputNum("幅(w) = "),
+		InputNum("高さ(h) = "),
+		InputNum("奥行き(d) = ")
+	);
+	cout << "表面積 = " << box->GetSurface() << "体積 = " << box->GetVolume() << endl;
+	delete box;
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
