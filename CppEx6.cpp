@@ -45,12 +45,12 @@ float InputNum(string massage)
 
 int main()
 {
-    Box box = Box(
+    Box* box = new Box(
         InputNum("幅 = "),
         InputNum("高さ = "),
         InputNum("奥行き = ")
     );
-    cout << "表面積 = " << box.GetSurface() << "体積 = " << box.GetVolume() << endl;
+    cout << "表面積 = " << box->GetSurface() << "体積 = " << box->GetVolume() << endl;
 }
 
 // プログラムの実行: Ctrl + F5 または [デバッグ] > [デバッグなしで開始] メニュー
